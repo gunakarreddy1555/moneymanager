@@ -24,6 +24,9 @@ public class CategoryEntity {
     @Column(updatable=false)
     @CreationTimestamp
     private LocalDateTime createdAt;
+
+
+
     @UpdateTimestamp
     private LocalDateTime updatedAt;
     private String type;
