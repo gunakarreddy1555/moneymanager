@@ -19,8 +19,9 @@ public class EmailService {
     public void sendEmail(String to, String subject, String body) {
      try{
      SimpleMailMessage message = new SimpleMailMessage();
-         System.out.println("Sending email to " + to);
-         System.out.println("Sending email to " + fromEmail);
+         if (to == null || to.trim().isEmpty()) {
+             throw new RuntimeException("Recipient email address cannot be null or empty");
+         }
          message.setFrom(fromEmail);
         message.setTo(to);
         message.setSubject(subject);
